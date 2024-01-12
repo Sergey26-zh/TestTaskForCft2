@@ -13,9 +13,16 @@ public class FileUsage {
         return Files.readAllLines(Paths.get(fileName));
     }
 
-    public static void write(String fileName, List<String> list) throws IOException {
+    public static <T> void write(String fileName, List<T> list) throws IOException {
         FileWriter writer = new FileWriter(fileName);
-        Files.write(Path.of(fileName), list, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+        List<String> stringList = convertToStringList(list);
+        Files.write(Path.of(fileName), stringList, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
         writer.close();
+    }
+
+    private static <T> List<String> convertToStringList(List<T> list) {
+        return list.stream()
+                .map(Object::toString)
+                .toList();
     }
 }
