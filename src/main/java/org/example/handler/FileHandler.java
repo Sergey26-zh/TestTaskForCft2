@@ -27,9 +27,9 @@ public class FileHandler {
         }
     }
 
-    public static <T> void writeHandler(String fileName, List<T> list) {
+    public static <T> void writeHandler(String fileName, List<T> list, boolean append) {
         try {
-            FileUsage.write(fileName, list);
+            FileUsage.write(fileName, list, append);
         }
         catch (IOException e) {
             System.err.println("Error " + e.getMessage());

@@ -13,10 +13,10 @@ public class FileUsage {
         return Files.readAllLines(Paths.get(fileName));
     }
 
-    public static <T> void write(String fileName, List<T> list) throws IOException {
+    public static <T> void write(String fileName, List<T> list, boolean append) throws IOException {
         FileWriter writer = new FileWriter(fileName);
         List<String> stringList = convertToStringList(list);
-        Files.write(Path.of(fileName), stringList, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+        Files.write(Path.of(fileName), stringList, StandardOpenOption.CREATE, append ? StandardOpenOption.APPEND : StandardOpenOption.WRITE);
         writer.close();
     }
 
