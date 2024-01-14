@@ -12,17 +12,16 @@ public class FileHandler {
             List<String> list = FileUsage.read(fileName);
 
             if (list.isEmpty()) {
-                System.out.println("File is empty");
+                System.out.println(fileName + " is empty");
             }
-
             return list;
         }
         catch (NoSuchFileException e) {
-            System.err.println("File not found");
+            System.err.println(fileName + " File not found");
             return null;
         }
         catch (IOException e) {
-            System.err.println("Error " + e.getMessage());
+            System.err.println(fileName + " Error " + e.getMessage());
             return null;
         }
     }
