@@ -23,5 +23,5 @@
      2. Найдите файл `TestTaskForCft2.jar`.
      3. Запустите приложение командой: `java -jar TestTaskForCft2.jar
    
-# Примеры использования приложения
+## Примеры использования приложения
    java -jar TestTaskForCft2.jar -s -a -p sample- in1.txt in2.txt
