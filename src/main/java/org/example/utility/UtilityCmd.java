@@ -86,18 +86,18 @@ public class UtilityCmd {
         int floatCount = floatList.size();
         int stringCount = stringList.size();
 
-        int minInt = integerList.stream().mapToInt(Long::intValue).min().orElse(0);
-        int maxInt = integerList.stream().mapToInt(Long::intValue).max().orElse(0);
+        long minInt = integerList.stream().mapToInt(Long::intValue).min().orElse(0);
+        long maxInt = integerList.stream().mapToInt(Long::intValue).max().orElse(0);
         double avgInt = integerList.stream().mapToInt(Long::intValue).average().orElse(0);
-        int sumInt = integerList.stream().mapToInt(Long::intValue).sum();
+        long sumInt = integerList.stream().mapToInt(Long::intValue).sum();
 
         float minFloat = (float) floatList.stream().mapToDouble(Float::floatValue).min().orElse(0);
         float maxFloat = (float) floatList.stream().mapToDouble(Float::floatValue).max().orElse(0);
         double avgFloat = floatList.stream().mapToDouble(Float::floatValue).average().orElse(0);
         double sumFloat = floatList.stream().mapToDouble(Float::floatValue).sum();
 
-        int minStringLength = stringList.stream().mapToInt(String::length).min().orElse(0);
-        int maxStringLength = stringList.stream().mapToInt(String::length).max().orElse(0);
+        long minStringLength = stringList.stream().mapToInt(String::length).min().orElse(0);
+        long maxStringLength = stringList.stream().mapToInt(String::length).max().orElse(0);
 
         System.out.println("Full Statistics:");
         System.out.println("Integers count: " + intCount);
