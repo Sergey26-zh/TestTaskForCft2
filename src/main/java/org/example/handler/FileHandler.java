@@ -7,9 +7,11 @@ import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 public class FileHandler {
-    public static List<String> readHandler(String fileName) {
+    FileUsage fileUsage = new FileUsage();
+    public List<String> readHandler(String fileName) {
         try {
-            List<String> list = FileUsage.read(fileName);
+
+            List<String> list = fileUsage.read(fileName);
 
             if (list.isEmpty()) {
                 System.out.println(fileName + " is empty");
@@ -26,9 +28,9 @@ public class FileHandler {
         }
     }
 
-    public static <T> void writeHandler(String fileName, List<T> list, boolean append) {
+    public <T> void writeHandler(String fileName, List<T> list, boolean append) {
         try {
-            FileUsage.write(fileName, list, append);
+            fileUsage.write(fileName, list, append);
         }
         catch (IOException e) {
             System.err.println("Error " + e.getMessage());
