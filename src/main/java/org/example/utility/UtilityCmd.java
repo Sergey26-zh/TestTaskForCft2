@@ -30,7 +30,7 @@ public class UtilityCmd {
 
     public void filter(List<String> list, boolean append, String outputPath, String prefix, boolean shortStat, boolean fullStat) {
 
-        List<Integer> integerList = new ArrayList<>();
+        List<Long> integerList = new ArrayList<>();
         List<Float> floatList = new ArrayList<>();
         List<String> stringList = new ArrayList<>();
 
@@ -39,7 +39,7 @@ public class UtilityCmd {
             if (read != null) {
                 for (String s : read) {
                     try {
-                        integerList.add(Integer.parseInt(s));
+                        integerList.add(Long.parseLong(s));
                     } catch (NumberFormatException e) {
                         try {
                             floatList.add(Float.parseFloat(s));
@@ -69,7 +69,7 @@ public class UtilityCmd {
         fileHandler.writeHandler(filePath.toString(), list, append);
     }
 
-    private void shortStat(List<Integer> integerList, List<Float> floatList, List<String> stringList) {
+    private void shortStat(List<Long> integerList, List<Float> floatList, List<String> stringList) {
         int intCount = integerList.size();
         int floatCount = floatList.size();
         int stringCount = stringList.size();
@@ -81,15 +81,15 @@ public class UtilityCmd {
         System.out.println();
     }
 
-    private void fullStat(List<Integer> integerList, List<Float> floatList, List<String> stringList) {
+    private void fullStat(List<Long> integerList, List<Float> floatList, List<String> stringList) {
         int intCount = integerList.size();
         int floatCount = floatList.size();
         int stringCount = stringList.size();
 
-        int minInt = integerList.stream().mapToInt(Integer::intValue).min().orElse(0);
-        int maxInt = integerList.stream().mapToInt(Integer::intValue).max().orElse(0);
-        double avgInt = integerList.stream().mapToInt(Integer::intValue).average().orElse(0);
-        int sumInt = integerList.stream().mapToInt(Integer::intValue).sum();
+        int minInt = integerList.stream().mapToInt(Long::intValue).min().orElse(0);
+        int maxInt = integerList.stream().mapToInt(Long::intValue).max().orElse(0);
+        double avgInt = integerList.stream().mapToInt(Long::intValue).average().orElse(0);
+        int sumInt = integerList.stream().mapToInt(Long::intValue).sum();
 
         float minFloat = (float) floatList.stream().mapToDouble(Float::floatValue).min().orElse(0);
         float maxFloat = (float) floatList.stream().mapToDouble(Float::floatValue).max().orElse(0);
