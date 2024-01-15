@@ -1,8 +1,6 @@
 package org.example.utility;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.apache.commons.cli.Options;
 import org.example.handler.FileHandler;
 
@@ -12,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@AllArgsConstructor
+@Data
+@Builder
 public class UtilityCmd {
     private final FileHandler fileHandler = new FileHandler();
 
@@ -39,7 +40,6 @@ public class UtilityCmd {
                 for (String s : read) {
                     try {
                         integerList.add(Integer.parseInt(s));
-
                     } catch (NumberFormatException e) {
                         try {
                             floatList.add(Float.parseFloat(s));

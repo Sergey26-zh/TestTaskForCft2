@@ -15,6 +15,9 @@ dependencies {
     implementation("commons-cli:commons-cli:1.4")
     implementation("org.projectlombok:lombok:1.18.26")
     annotationProcessor("org.projectlombok:lombok:1.18.26")
+    testImplementation ("org.mockito:mockito-core:5.8.0")
+    testImplementation ("org.mockito:mockito-junit-jupiter:5.8.0")
+    implementation("commons-io:commons-io:2.11.0")
 }
 
 tasks.test {

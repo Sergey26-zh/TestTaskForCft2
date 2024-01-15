@@ -1,17 +1,9 @@
 package org.example;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.apache.commons.cli.*;
-import org.example.handler.FileHandler;
 import org.example.utility.UtilityCmd;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
